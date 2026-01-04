@@ -1,0 +1,48 @@
+body {
+    background-color: var(--body-bg-color);
+}
+
+h1 {
+    font-family: 'Quentincaps', monospace;
+    font-style: normal;
+    font-weight: normal;
+    text-align: center;
+    font-size: 3rem;
+}
+
+h1 a {
+    display: inline-block;
+    text-decoration: none;
+    color: var(--body-bg-color);
+    padding: 0.5rem;
+    background-color: var(--CTA-button);
+    border-radius: 25px;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+h1 a:hover {
+    background-color: var(--CTA-button-hover);
+    color: var(--CTA-tekst-hover);
+    transform: scale(1.2);
+}
+
+h2 {
+    font-family: 'Cowboyoutlaw', monospace;
+    font-style: normal;
+    font-weight: normal;
+    text-align: center;
+}
+
+footer {
+    background-color: var(--foot-color);
+    margin-bottom: 0;
+}
+
+.forsideheader {
+    color: var(--forside-header);
+    font-size: 3rem;
+}
+
+#velkommen {
+    font-size: 2rem;
+}
