@@ -4,11 +4,11 @@ let isAnimating = false;
 
 
 const photos = [
-  { src: "images/introvideo.jpg", title: "Tema 1 - Introuge"},
-  { src: "images/mobilsitetema2.jpg", title: "Tema 2 - Grundlæggende Web"},
-  { src: "images/Ludomanisite.jpg", title: "Tema 3 - Grundlæggende UX"},
-  { src: "images/emneesite.jpg", title: "Tema 4 - Grundlæggende Brugergrænsefladeudvikling"},
-  { src: "images/sushisite.jpg", title: "Tema 5 - Grundlæggende Indhold"}
+  { src: "images/Tema-1.jpg", title: "Tema 1 - Introuge"},
+  { src: "images/Tema-2.jpg", title: "Tema 2 - Grundlæggende Web"},
+  { src: "images/Tema-3.jpg", title: "Tema 3 - Grundlæggende UX"},
+  { src: "images/Tema-4.jpg", title: "Tema 4 - Grundlæggende Brugergrænsefladeudvikling"},
+  { src: "images/Tema-5.jpg", title: "Tema 5 - Grundlæggende Indhold"}
 ];
 
 let currentIndex = 0;

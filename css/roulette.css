@@ -74,6 +74,23 @@ h3 {
     flex-direction: column;
 }
 
+.info button {
+    background-color: var(--CTA-button);
+    color: var(--body-bg-color);
+    border: none;
+    border-radius: 6px;
+    padding: 10px 15px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.info button:hover {
+    background-color: var(--CTA-button-hover);
+    color: var(--CTA-tekst-hover);
+    transform: scale(1.2);
+}
+
 button {
     padding: 8px 12px;
     cursor: pointer;
@@ -138,6 +155,7 @@ button {
     background-color: #7A4231;
     display: block;
     margin: 0 auto;
+    margin-bottom: 1.5rem;
 }
 
 details {
@@ -150,13 +168,39 @@ details {
 details summary {
     cursor: pointer;
     font-weight: bold;
+    font-size: 1.3rem;
+    font-family: 'Headlandone';
+    font-style: normal;
+    transition: margin 0.5s ease;
 }
 
 details[open] summary {
     font-weight: normal;
+    margin-bottom: 0.5rem;
+}
+
+details>*:not(summary) {
+    animation: slideDown 0.5s ease;
+}
+
+/*Animation for details*/
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 #mobilbillede {
     width: 35%;
     height: auto;
+}
+
+details li {
+    font-size: 1.2rem;
 }
