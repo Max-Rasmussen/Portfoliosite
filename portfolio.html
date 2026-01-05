@@ -27,34 +27,72 @@
         <h1>Tidligere Temaer</h1>
         <section class="roulette">
 
-            <div class="track">
-
-                <div class="image-slot" id="prev">
-                    <img>
-                </div>
-
-                <div class="image-slot active" id="current">
-                    <img>
-                </div>
-
-                <div class="image-slot" id="next">
-                    <img>
-                </div>
-
+            <div id="prev" class="image-slot prev">
+                <img>
             </div>
 
+            <div class="image-slot current">
+                <img>
+            </div>
+
+            <div id="next" class="image-slot next">
+                <img>
+            </div>
         </section>
         <div class="info">
-            <h3></h3>
-            <button>Click me</button>
-            <div class="controls">
-                <button id="back">Tilbage</button>
-                <button id="forward">Fremad</button>
-            </div>
+            <h3 id="title"></h3>
+            <button id="infoBtn">Info</button>
         </div>
 
+        <div id="popover" class="popover hidden">
 
-        <script src="js/roulette.js"></script>
+            <div class="popover-content">
+                <div class="popover-page" data-index="0">
+                    <h2>First Image</h2>
+                    <img src="info-img1.jpg">
+                    <p>Lots of detailed info here.</p>
+                    <a href="#">Learn more</a>
+                </div>
+            </div>
+
+            <div class="popover-content">
+                <div class="popover-page" data-index="1">
+                    <h2>Second Image</h2>
+                    <p>Different layout, links, images, etc.</p>
+                </div>
+            </div>
+
+            <div class="popover-content">
+                <div class="popover-page" data-index="2">
+                    <h2>Third Image</h2>
+                    <img src="info-img3.jpg">
+                </div>
+            </div>
+
+            <div class="popover-content">
+                <div class="popover-page" data-index="3">
+                    <h2>Fourth Image</h2>
+                    <p>Even more content.</p>
+                </div>
+            </div>
+
+            <div class="popover-content">
+                <div class="popover-page" data-index="4">
+                    <h2>Fifth Image</h2>
+                    <p>Final content page.</p>
+                </div>
+            </div>
+
+        </div>
+
+        <!--<div class="controls">
+            <button id="back">Tilbage</button>
+            <button id="forward">Fremad</button>
+        </div> -->
+
+
+    </main>
+    <script src="js/roulette.js"></script>
 </body>
 
 </html>

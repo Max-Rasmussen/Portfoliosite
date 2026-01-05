@@ -1,36 +1,36 @@
 document.addEventListener("DOMContentLoaded", () => {
 //storage af billeder
 
+let isAnimating = false;
+
+
 const photos = [
-  {
-    src: "images/cowboy.png",
-    title: "First Photo"
-  },
-  {
-    src: "images/cowboy.png",
-    title: "Second Photo"
-  },
-  {
-    src: "images/cowboy.png",
-    title: "Third Photo"
-  },
-
-  {
-    src: "images/cowboy.png",
-    title: "Fourth Photo"
-  },
-
-  {
-    src: "images/cowboy.png",
-    title: "Fifth Photo"
-  }
+  { src: "images/cowboy.png", title: "Tema 1 - Introuge"},
+  { src: "images/cowboy.png", title: "Tema 2 - Grundlæggende Web"},
+  { src: "images/cowboy.png", title: "Tema 3 - Grundlæggende UX"},
+  { src: "images/cowboy.png", title: "Tema 4 - Grundlæggende Brugergrænsefladeudvikling"},
+  { src: "images/cowboy.png", title: "Tema 5 - Grundlæggende Indhold"}
 ];
 
 let currentIndex = 0;
 
-const track = document.querySelector(".track");
 const slots = document.querySelectorAll(".image-slot");
-const title = document.querySelector(".info h3");
+const infoBtn = document.getElementById("infoBtn");
+const popover = document.getElementById("popover");
+const popoverPages = document.querySelectorAll(".popover-page");
+
+// slots[0] → prev
+// slots[1] → current
+// slots[2] → next
+
+
+function getSlots() {
+  return {
+    prev: document.querySelector(".image-slot.prev"),
+    current: document.querySelector(".image-slot.current"),
+    next: document.querySelector(".image-slot.next")
+  };
+}
 
 
 //modulo (%) efterlader remainderen efter at minusse de 2 ting
@@ -38,62 +38,111 @@ function render() {
   const prevIndex = (currentIndex - 1 + photos.length) % photos.length;
   const nextIndex = (currentIndex + 1) % photos.length;
 
+  slots[0].querySelector("img").src = photos[prevIndex].src;
+  slots[1].querySelector("img").src = photos[currentIndex].src;
+  slots[2].querySelector("img").src = photos[nextIndex].src;
+  
+  document.getElementById("title").textContent = photos[currentIndex].title;
 
-  document.querySelector("#prev img").src = photos[prevIndex].src;
-  document.querySelector("#current img").src = photos[currentIndex].src;
-  document.querySelector("#next img").src = photos[nextIndex].src;
+  if (!popover.classList.contains("hidden")) {
+    updatePopoverContent();
 
+  }
+}
 
-  title.textContent = photos[currentIndex].title;
+//Popout tied til currentindex
+function updatePopoverContent() {
+  popoverPages.forEach(page => {
+    page.classList.toggle(
+      "active",
+      Number(page.dataset.index) === currentIndex
+    );
+  });
+}
+
+function rotateForward() {
+  if (isAnimating) return;
+  isAnimating = true;
+
+  const { prev, current, next } = getSlots();
+
+  // rotate roles
+  prev.classList.remove("prev");
+  prev.classList.add("next");
+
+  current.classList.remove("current");
+  current.classList.add("prev");
+
+  next.classList.remove("next");
+  next.classList.add("current");
+
+  // update index AFTER animation starts
+  currentIndex = (currentIndex + 1) % photos.length;
+
+  // update images AFTER animation finishes
+  setTimeout(() => {
+    render();
+    isAnimating = false;
+  }, 450);
 }
 
 
-//slide fremad animation
-function slideForward() {
-  track.style.transform = "translateX(-100px)";
+function rotateBackward() {
+  if (isAnimating) return;
+  isAnimating = true;
+
+  const { prev, current, next } = getSlots();
+
+  prev.classList.remove("prev");
+  prev.classList.add("current");
+
+  current.classList.remove("current");
+  current.classList.add("next");
+
+  next.classList.remove("next");
+  next.classList.add("prev");
+
+  currentIndex = (currentIndex - 1 + photos.length) % photos.length;
 
   setTimeout(() => {
-    track.style.transition = "none";
-    track.style.transform = "translateX(0)";
-
-    currentIndex = (currentIndex + 1) % photos.length;
     render();
-
-    track.offsetHeight;
-    track.style.transition = "transform 0.4s ease";
-  }, 400);
+    isAnimating = false;
+  }, 450);
 }
 
-//slide tilbage animation
 
-function slideBackward() {
-  track.style.transform = "translateX(100px)";
+//åben knap
+infoBtn.addEventListener("click", () => {
+  updatePopoverContent();
+  popover.classList.remove("hidden");
+});
 
-  setTimeout(() => {
-    track.style.transition = "none";
-    track.style.transform = "translateX(0)";
+//luk knap
+popover.addEventListener("click", (e) => {
+  if (e.target === popover) {
+    popover.classList.add("hidden");
+  }
+});
 
-    currentIndex = (currentIndex - 1 + photos.length) % photos.length;
-    render();
-
-    track.offsetHeight;
-    track.style.transition = "transform 0.4s ease";
-  }, 400);
-}
 
 
 //knappernes kode
+document.querySelector(".roulette").addEventListener("click", (e) => {
+  const slot = e.target.closest(".image-slot");
+  if (!slot) return;
 
-document.getElementById("forward").addEventListener("click", slideForward);
-document.getElementById("back").addEventListener("click", slideBackward);
+  if (slot.classList.contains("prev")) {
+    rotateBackward();
+  }
 
-slots[0].addEventListener("click", slideBackward);
-slots[2].addEventListener("click", slideForward);
+  if (slot.classList.contains("next")) {
+    rotateForward();
+  }
+});
 
 
-//kode for at klikke videre på billederne selv
-document.getElementById("prev").addEventListener("click", slideBackward);
-document.getElementById("next").addEventListener("click", slideForward);
+
+
 
 
   render();

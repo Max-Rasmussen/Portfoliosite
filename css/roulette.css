@@ -1,43 +1,66 @@
 /*Tror det ka ændres til mobil design ved bare at skjule overflow*/
 
 .roulette {
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 50px;
-}
 
+    --slot-spacing: clamp(180px, 30vw, 260px);
 
-
-.track {
-    display: flex;
-    transition: transform 0.4s ease;
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    height: 320px;
+    margin: auto;
+    margin-top: 3rem;
 }
 
 .image-slot {
-    width: 200px;
-    flex-shrink: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 250px;
     text-align: center;
-    opacity: 0.4;
-    transform: scale(0.9);
-    transition: transform 0.4s ease, opacity 0.4s ease;
+
+    transform-origin: center;
+    transition:
+        transform 0.45s ease,
+        opacity 0.45s ease;
 }
+
 
 .image-slot img {
     width: 100%;
-    border-radius: 10px;
+    border-radius: 12px;
 }
 
-.image-slot.faded {
+/* ROLES */
+
+.image-slot.prev {
+    transform:
+        translate(calc(-50% - var(--slot-spacing)),
+            -50%) scale(0.75);
     opacity: 0.4;
-    transform: scale(0.9);
-    cursor: pointer;
+    z-index: 1;
 }
 
-.image-slot.active {
+.image-slot.current {
+    transform:
+        translate(-50%, -50%) scale(1);
     opacity: 1;
-    transform: scale(1);
+    z-index: 3;
+}
+
+.image-slot.next {
+    transform:
+        translate(calc(-50% + var(--slot-spacing)),
+            -50%) scale(0.75);
+    opacity: 0.4;
+    z-index: 1;
+}
+
+
+/* Hover hint */
+.image-slot.prev,
+.image-slot.next {
+    cursor: pointer;
 }
 
 h3 {
@@ -45,6 +68,7 @@ h3 {
 }
 
 .info {
+    margin-top: 3rem;
     align-items: center;
     display: flex;
     flex-direction: column;
@@ -55,16 +79,38 @@ button {
     cursor: pointer;
 }
 
-.controls {
+/*.controls {
     margin-top: 20px;
     gap: 15%;
     display: flex;
+    justify-content: center;
+} */
+
+.popover {
+    position: fixed;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.97);
+    z-index: 1000;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-#prev {
-    transform: translateX(-40px) scale(0.9);
+.popover-content {
+    max-width: 800px;
+    max-height: 90vh;
+    overflow-y: auto;
 }
 
-#next {
-    transform: translateX(40px) scale(0.9);
+.popover-page {
+    display: none;
+}
+
+.popover-page.active {
+    display: block;
+}
+
+.hidden {
+    display: none;
 }
