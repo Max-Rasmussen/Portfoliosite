@@ -1,15 +1,14 @@
-document.addEventListener("DOMContentLoaded", () => {
 //storage af billeder
 
 let isAnimating = false;
 
 
 const photos = [
-  { src: "images/cowboy.png", title: "Tema 1 - Introuge"},
-  { src: "images/cowboy.png", title: "Tema 2 - Grundlæggende Web"},
-  { src: "images/cowboy.png", title: "Tema 3 - Grundlæggende UX"},
-  { src: "images/cowboy.png", title: "Tema 4 - Grundlæggende Brugergrænsefladeudvikling"},
-  { src: "images/cowboy.png", title: "Tema 5 - Grundlæggende Indhold"}
+  { src: "images/introvideo.jpg", title: "Tema 1 - Introuge"},
+  { src: "images/mobilsitetema2.jpg", title: "Tema 2 - Grundlæggende Web"},
+  { src: "images/Ludomanisite.jpg", title: "Tema 3 - Grundlæggende UX"},
+  { src: "images/emneesite.jpg", title: "Tema 4 - Grundlæggende Brugergrænsefladeudvikling"},
+  { src: "images/sushisite.jpg", title: "Tema 5 - Grundlæggende Indhold"}
 ];
 
 let currentIndex = 0;
@@ -38,15 +37,16 @@ function render() {
   const prevIndex = (currentIndex - 1 + photos.length) % photos.length;
   const nextIndex = (currentIndex + 1) % photos.length;
 
-  slots[0].querySelector("img").src = photos[prevIndex].src;
-  slots[1].querySelector("img").src = photos[currentIndex].src;
-  slots[2].querySelector("img").src = photos[nextIndex].src;
-  
+  const { prev, current, next } = getSlots();
+
+  prev.querySelector("img").src = photos[prevIndex].src;
+  current.querySelector("img").src = photos[currentIndex].src;
+  next.querySelector("img").src = photos[nextIndex].src;
+
   document.getElementById("title").textContent = photos[currentIndex].title;
 
   if (!popover.classList.contains("hidden")) {
     updatePopoverContent();
-
   }
 }
 
@@ -76,10 +76,10 @@ function rotateForward() {
   next.classList.remove("next");
   next.classList.add("current");
 
-  // update index AFTER animation starts
+  // update index efter animation
   currentIndex = (currentIndex + 1) % photos.length;
 
-  // update images AFTER animation finishes
+  // update billeder efter animation er slut
   setTimeout(() => {
     render();
     isAnimating = false;
@@ -118,8 +118,8 @@ infoBtn.addEventListener("click", () => {
 });
 
 //luk knap
-popover.addEventListener("click", (e) => {
-  if (e.target === popover) {
+document.addEventListener("click", (e) => {
+  if (!popover.contains(e.target) && e.target !== infoBtn && !infoBtn.contains(e.target)) {
     popover.classList.add("hidden");
   }
 });
@@ -141,11 +141,5 @@ document.querySelector(".roulette").addEventListener("click", (e) => {
 });
 
 
-
-
-
-
   render();
-});
-
 

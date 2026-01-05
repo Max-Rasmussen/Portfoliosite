@@ -18,3 +18,8 @@
     font-family: Cowboyoutlawtextured;
     src: url(../fonts/cowboyoutlawtextured-bljev.otf);
 }
+
+@font-face {
+    font-family: Headlandone;
+    src: url(../fonts/HeadlandOne-Regular.ttf);
+}

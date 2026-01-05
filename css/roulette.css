@@ -88,19 +88,27 @@ button {
 
 .popover {
     position: fixed;
-    inset: 0;
-    background: rgba(255, 255, 255, 0.97);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 65%;
+    max-width: 1100px;
+    background: #efb682;
+    border: solid #7A4231 5px;
     z-index: 1000;
+    padding: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.popup::-webkit-scrollbar {
+    display: none;
 }
 
 .popover-content {
-    max-width: 800px;
+    max-width: 100%;
     max-height: 90vh;
     overflow-y: auto;
+    scrollbar-width: none;
 }
 
 .popover-page {
@@ -111,6 +119,44 @@ button {
     display: block;
 }
 
+
 .hidden {
     display: none;
+}
+
+.popover h2 {
+    font-size: 3rem;
+    text-align: normal !important;
+    color: #7A4231;
+}
+
+.popover img {
+    max-width: 80%;
+    border-radius: 12px;
+    object-fit: cover;
+    padding: 0.5em;
+    background-color: #7A4231;
+    display: block;
+    margin: 0 auto;
+}
+
+details {
+    margin: 1rem 0;
+    padding: 0.5rem;
+    background-color: #f1c8a1;
+    border-radius: 20px;
+}
+
+details summary {
+    cursor: pointer;
+    font-weight: bold;
+}
+
+details[open] summary {
+    font-weight: normal;
+}
+
+#mobilbillede {
+    width: 35%;
+    height: auto;
 }
