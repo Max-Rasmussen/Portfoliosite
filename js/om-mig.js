@@ -2,20 +2,20 @@
 
 const billeder = [
   {
-    src: "images/cowboy.png",
+    src: "images/cowboy.jpg",
     title: "First Photo"
   },
   {
-    src: "images/cowboy.png",
+    src: "images/mig3.jpeg",
     title: "Second Photo"
   },
   {
-    src: "images/cowboy.png",
+    src: "images/mig2.jpeg",
     title: "Third Photo"
   },
 
   {
-    src: "images/cowboy.png",
+    src: "images/mig1.jpg",
     title: "Fourth Photo"
   }
 ];

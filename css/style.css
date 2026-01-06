@@ -67,23 +67,41 @@ footer {
 
 .frame-wrapper {
     position: relative;
-    width: 100%;
-    /*min-height: calc(100vh - var(--header-height));*/
-    box-sizing: border-box;
+    margin-top: -3em;
 }
 
-/* SVG frame */
-.page-frame {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: 0;
+/* SVG is a BACKGROUND layer */
+@media(min-width: 800px) {
+    .page-frame {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+        pointer-events: none;
+    }
+
+    .forsideheader {
+        margin-top: 1.8em;
+    }
 }
 
-/* Content above the frame */
+
+@media (max-width: 799px) {
+    .page-frame {
+        display: none;
+    }
+}
+
+
+/* Content defines the height */
 .framed-content {
     position: relative;
     z-index: 1;
+    padding: 3rem;
+    /* space from frame */
+}
+
+.cls-1 {
+    fill: #ac7b49;
 }
