@@ -1,5 +1,3 @@
-/*Tror det ka ændres til mobil design ved bare at skjule overflow*/
-
 .roulette {
     --slot-spacing: clamp(160px, 30vw, 260px);
     position: relative;
@@ -57,7 +55,7 @@
 }
 
 
-/* Hover hint */
+
 .image-slot.prev,
 .image-slot.next {
     cursor: pointer;

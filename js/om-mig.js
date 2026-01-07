@@ -36,7 +36,7 @@ function render() {
 
     // Fade ind igen
     frame.classList.remove("fade");
-  }, 800); // samme tid som CSS transition
+  }, 700); // samme tid som CSS transition
 }
 
 function næsteBillede() {

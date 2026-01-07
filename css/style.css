@@ -3,6 +3,10 @@ body {
     margin: 0;
 }
 
+body::-webkit-scrollbar {
+    display: none;
+}
+
 h1 {
     font-family: 'Quentincaps', monospace;
     font-style: normal;
@@ -52,9 +56,46 @@ p {
 footer {
     background-color: var(--foot-color);
     margin-bottom: 0px;
-    background-color: #E1D5BE;
+    background-color: #FEECDE;
     padding: 2rem;
+    border: 3px solid var(--CTA-button);
+}
 
+footer h3 {
+    margin: 0;
+    margin-left: 1.5rem !important;
+}
+
+.flexfooter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    p {
+        font-family: 'Cowboyoutlaw', sans-serif;
+        font-size: 1.3rem;
+    }
+
+    li {
+        list-style: none;
+
+    }
+
+    a {
+        text-decoration: none;
+        font-size: 1.3rem;
+    }
+}
+
+
+
+.lavet {
+    font-size: 1.2rem;
+    text-align: center;
+    font-family: 'Firlest', sans-serif;
+    color: #cc9258;
+    opacity: 0.8;
+    margin-bottom: 1rem;
 }
 
 .forsideheader {
@@ -97,15 +138,19 @@ footer {
     .page-frame {
         display: none;
     }
+
+    .frame {
+        margin-left: 11rem;
+    }
 }
 
 
-/* Content defines the height */
+
 .framed-content {
     position: relative;
     z-index: 1;
     padding: 3rem;
-    /* space from frame */
+
 }
 
 .cls-1 {
