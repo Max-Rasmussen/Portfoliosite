@@ -47,6 +47,6 @@ function næsteBillede() {
 frame.addEventListener("click", næsteBillede);
 
 
-setInterval(næsteBillede, 8000);
+setInterval(næsteBillede, 7000);
 
 render();
