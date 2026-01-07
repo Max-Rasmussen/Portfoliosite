@@ -29,7 +29,7 @@ function getSlots() {
 }
 
 
-//modulo (%) efterlader remainderen efter at minusse de 2 ting
+//modulo (%) efterlader remainderen efter division, så det sikrer at vi "wrap around"
 function render() {
   const prevIndex = (currentIndex - 1 + photos.length) % photos.length;
   const nextIndex = (currentIndex + 1) % photos.length;
@@ -63,7 +63,7 @@ function rotateForward() {
 
   const { prev, current, next } = getSlots();
 
-  // rotate roles
+  // roter klasser
   prev.classList.remove("prev");
   prev.classList.add("next");
 
