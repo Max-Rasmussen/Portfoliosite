@@ -93,7 +93,7 @@ footer h3 {
     font-size: 1.2rem;
     text-align: center;
     font-family: 'Firlest', sans-serif;
-    color: #cc9258;
+    color: #db7006;
     opacity: 0.8;
     margin-bottom: 1rem;
 }
@@ -115,6 +115,19 @@ footer h3 {
     margin: 11px;
     margin-top: -3em;
 
+}
+
+.footerul a {
+    font-family: 'cowboyoutlaw' sans-serif;
+}
+
+.footerul li {
+    gap: 0.8rem;
+}
+
+.footerul a:hover {
+    color: #5396f6;
+    transform: scale(1.2);
 }
 
 /* SVG is a BACKGROUND layer */
