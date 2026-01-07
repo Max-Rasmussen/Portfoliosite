@@ -1,5 +1,6 @@
 body {
     background-color: var(--body-bg-color);
+    margin: 0;
 }
 
 h1 {
@@ -50,7 +51,10 @@ p {
 
 footer {
     background-color: var(--foot-color);
-    margin-bottom: 0;
+    margin-bottom: 0px;
+    background-color: #E1D5BE;
+    padding: 2rem;
+
 }
 
 .forsideheader {
@@ -67,7 +71,9 @@ footer {
 
 .frame-wrapper {
     position: relative;
+    margin: 11px;
     margin-top: -3em;
+
 }
 
 /* SVG is a BACKGROUND layer */

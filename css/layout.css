@@ -1,5 +1,7 @@
 .headerboks {
     margin: 1rem 1.5rem 0.5rem 1.5rem;
+    position: relative;
+    z-index: 10;
 }
 
 .headerboks ul {
@@ -16,7 +18,7 @@
     font-family: 'Firlest';
     font-style: normal;
     font-weight: normal;
-    z-index: 5;
+    z-index: 3;
 }
 
 .headerboks a {
@@ -25,7 +27,7 @@
     color: var(--forside-header);
     font-size: 1.5rem;
     transition: transform 0.2s ease, color 0.2s ease;
-    z-index: 5;
+    z-index: 3;
 }
 
 .headerboks a:hover {
@@ -66,6 +68,7 @@
 .grid-billede img {
     width: 75%;
     height: 75%;
+    max-height: 400px;
     object-fit: cover;
     display: block;
     margin-left: auto;
@@ -84,6 +87,7 @@
 .grid-billede2 img {
     width: 75%;
     height: 75%;
+    max-height: 400px;
     object-fit: cover;
     display: block;
     margin-left: auto;
@@ -107,35 +111,13 @@
     transition: opacity 0.8s ease-in-out;
     opacity: 1;
     max-height: 500px;
+    border-radius: 5px;
 }
 
 .frame.fade {
     opacity: 0;
 }
 
-
-.grid-1-3 img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    margin-left: 2em;
-    margin-right: 2em;
-}
-
-.grid-3-2 {
-    display: grid;
-    grid-template-columns: 3fr 2fr;
-    gap: 3rem;
-    margin-left: 3em;
-    margin-right: 2em;
-}
-
-.grid-3-2 img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    margin-right: 1.5em;
-}
 
 .omosnav {
     margin-bottom: 3rem;
@@ -169,9 +151,9 @@
     transform: scale(1.2);
 }
 
-.grid-1-1-1tekst {
+.grid-1-2tekst {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr 2fr;
     gap: 1rem;
     margin-left: 3em;
     margin-right: 4em;
@@ -207,6 +189,8 @@
     margin-bottom: 8rem;
 }
 
+
+
 @media (min-width: 900px) {
     .grid-billede2 img {
         display: none;
@@ -222,6 +206,35 @@
         gap: 1rem;
         margin: 2rem 0.5rem;
     }
+
+
+    /*Kode for om-os side*/
+    .grid-1-3 img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        margin-left: 2em;
+        margin-right: 2em;
+    }
+
+    .grid-3-2 {
+        display: grid;
+        grid-template-columns: 3fr 2fr;
+        gap: 3rem;
+        margin-left: 3em;
+        margin-right: 2em;
+    }
+
+    .grid-3-2 img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        margin-right: 1.5em;
+    }
+
+
+
+
 }
 
 @media (max-width: 900px) {

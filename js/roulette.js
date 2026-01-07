@@ -18,9 +18,6 @@ const infoBtn = document.getElementById("infoBtn");
 const popover = document.getElementById("popover");
 const popoverPages = document.querySelectorAll(".popover-page");
 
-// slots[0] → prev
-// slots[1] → current
-// slots[2] → next
 
 
 function getSlots() {
