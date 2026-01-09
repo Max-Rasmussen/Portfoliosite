@@ -8,7 +8,7 @@ body::-webkit-scrollbar {
 }
 
 h1 {
-    font-family: Quentincaps, monospace;
+    font-family: 'Quentincaps', monospace;
     font-style: normal;
     font-weight: normal;
     text-align: center;
