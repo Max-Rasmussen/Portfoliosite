@@ -1,5 +1,5 @@
 @font-face {
-    font-family: 'Quentincaps';
+    font-family: Quentincaps;
     src: url(/fonts/QUENCRG_.TTF);
 }
 
@@ -10,7 +10,7 @@
 }
 
 @font-face {
-    font-family: 'Cowboyoutlaw';
+    font-family: Cowboyoutlaw;
     src: url(/.fonts/cowboyoutlaw-r9qgm.otf);
 }
 
