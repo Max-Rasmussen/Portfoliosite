@@ -15,7 +15,7 @@
 
 .headerboks li {
     text-align: center;
-    font-family: 'Firlest';
+    font-family: Firlest;
     font-style: normal;
     font-weight: normal;
     z-index: 3;
@@ -145,7 +145,7 @@
     font-size: 1.5rem;
     transition: transform 0.2s ease, color 0.2s ease;
     align-items: center;
-    font-family: 'Firlest';
+    font-family: Firlest;
     font-style: normal;
     font-weight: normal;
 }
@@ -165,7 +165,7 @@
 
 .textmargin {
     font-size: 1.1rem;
-    font-family: 'Headlandone', sans-serif;
+    font-family: Headlandone, sans-serif;
     margin-left: 1.8rem;
     margin-right: 1.8rem;
 
@@ -174,7 +174,7 @@
 .skills p {
     background-color: var(--body-bg-color);
     padding: 0.5rem;
-    font-family: 'Cowboyoutlaw';
+    font-family: Cowboyoutlaw;
     font-size: 1.1rem;
 }
 
