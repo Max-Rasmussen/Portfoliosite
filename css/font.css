@@ -1,25 +1,25 @@
 @font-face {
     font-family: Quentincaps;
-    src: url(/fonts/QUENCRG_.TTF);
+    src: url(../fonts/QUENCRG_.TTF);
 }
 
 
 @font-face {
     font-family: Firlest;
-    src: url(/.fonts/firlest-regular.otf);
+    src: url(../fonts/firlest-regular.otf);
 }
 
 @font-face {
     font-family: Cowboyoutlaw;
-    src: url(/.fonts/cowboyoutlaw-r9qgm.otf);
+    src: url(../fonts/cowboyoutlaw-r9qgm.otf);
 }
 
 @font-face {
     font-family: Cowboyoutlawtextured;
-    src: url(/fonts/cowboyoutlawtextured-bljev.otf);
+    src: url(../fonts/cowboyoutlawtextured-bljev.otf);
 }
 
 @font-face {
     font-family: Headlandone;
-    src: url(/fonts/HeadlandOne-Regular.ttf);
+    src: url(../fonts/HeadlandOne-Regular.ttf);
 }
