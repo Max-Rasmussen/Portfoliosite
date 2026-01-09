@@ -8,7 +8,7 @@ body::-webkit-scrollbar {
 }
 
 h1 {
-    font-family: 'Quentincaps', monospace;
+    font-family: Quentincaps, monospace;
     font-style: normal;
     font-weight: normal;
     text-align: center;
@@ -32,14 +32,14 @@ h1 a:hover {
 }
 
 h2 {
-    font-family: 'Cowboyoutlaw', monospace;
+    font-family: Cowboyoutlaw, monospace;
     font-style: normal;
     font-weight: normal;
     text-align: center;
 }
 
 h3 {
-    font-family: 'Firlest';
+    font-family: Firlest;
     font-style: normal;
     font-weight: normal;
     text-align: center;
@@ -47,7 +47,7 @@ h3 {
 }
 
 p {
-    font-family: 'Headlandone', sans-serif;
+    font-family: Headlandone, sans-serif;
     font-style: normal;
     font-weight: normal;
     font-style: 1.1rem;
@@ -72,7 +72,7 @@ footer h3 {
     align-items: center;
 
     p {
-        font-family: 'Cowboyoutlaw', sans-serif;
+        font-family: Cowboyoutlaw, sans-serif;
         font-size: 1.3rem;
     }
 
@@ -92,7 +92,7 @@ footer h3 {
 .lavet {
     font-size: 1.2rem;
     text-align: center;
-    font-family: 'Firlest', sans-serif;
+    font-family: Firlest, sans-serif;
     color: #db7006;
     opacity: 0.8;
     margin-bottom: 1rem;
@@ -118,7 +118,7 @@ footer h3 {
 }
 
 .footerul a {
-    font-family: 'cowboyoutlaw' sans-serif;
+    font-family: cowboyoutlaw sans-serif;
 }
 
 .footerul li {
